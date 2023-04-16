@@ -32,7 +32,7 @@ section div{
 .iconhtml{
   position:relative;
   left:37%;
-  bottom: 100%;
+  margin-top: 0%;
 }
 .iconcpp{
   position: relative;
@@ -46,8 +46,8 @@ section div{
 .sklweb{
     font-size: x-large;
     width: 30%;
-    margin-top: 4%;
-    margin-left: 30%;
+    margin-top: 0%;
+    margin-left: 35%;
     text-align: center;
     color: cornflowerblue;
 }
@@ -56,7 +56,7 @@ section div{
     width: 20%;
     text-align: center;
     margin-left: 6%;
-    margin-top: 3.5%;
+    margin-top: 1%;
     color: chocolate;
 }
 .salaryweb{
@@ -64,8 +64,8 @@ section div{
     position: absolute;
     width: 30%;
     text-align: center;
-    margin-top: 0.8%;
-    left:60%;
+    left:65%;
+    bottom: 20%;
     color: lightcoral;
 }
 .sklcyb{
@@ -88,9 +88,9 @@ section div{
 }
 .salarycyb{
     font-size: x-large;
-    width: 30%;
+    width: 35%;
     position: relative;
-    margin-top: 10%;
+    margin-top: 8%;
     text-align: center;
     margin-right: 15%;
     color:rgb(39, 39, 226);
@@ -108,18 +108,18 @@ section div{
   font-size: x-large;
   text-align: center;
   position: relative;
-  width: 25%;
-  margin-top: 20%;
-  margin-left: 30%;
+  width: 50%;
+  margin-top: 15%;
+  margin-left: 16%;
   color:rgb(226, 39, 80);
 }
 .sklai{
   font-size: x-large;
   position: absolute;
-  width:27%;
+  width:33%;
   text-align: center;
-  margin-top: 4%;
-  margin-left: 20%;
+  margin-top: 2%;
+  margin-left: 16%;
   color:gold;
 }
 .langai{
@@ -128,8 +128,13 @@ section div{
     width: 30%;
     text-align: center;
     left: 60%;
-    margin-top: 4%;
+    margin-top: 2%;
     color:rgb(135, 50, 205);
+}
+.icontorch{
+  position: relative;
+  left: 42%;
+  margin-top: 4%;
 }
 .button {
     margin: 0;

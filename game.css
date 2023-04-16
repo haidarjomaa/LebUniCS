@@ -15,9 +15,9 @@ progress[value] {
     box-shadow: 0 0 3px #666 inset;
   }
   progress[value]::-webkit-progress-value {
-    background: -webkit-linear-gradient(-45deg, transparent 30%, #8ebf42 70%, #8ebf42 40%, transparent 30%),
-    -webkit-linear-gradient(top, #f26f04, #8ebf42),
-    -webkit-linear-gradient(right, #f2b304, #acbf42);
+    background: -webkit-linear-gradient(-45deg, transparent 30%, #bf5f42 70%, #b40000 40%, transparent 30%),
+    -webkit-linear-gradient(top, #1c04f2, #c49c18),
+    -webkit-linear-gradient(right, #f2b304, #bf42bf);
     background-size: 40px 20px,  10%;
   }
 .title{

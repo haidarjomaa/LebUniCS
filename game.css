@@ -23,7 +23,8 @@ progress[value] {
   progress{
     margin-left: 70%;
     margin-right: 10%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
+    margin-top: 0%;
   }
 .title{
     font-size: 40px;

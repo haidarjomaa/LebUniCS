@@ -4,9 +4,6 @@ html{
     overflow-x: hidden;
     text-transform: capitalize;
 }
-::-webkit-scrollbar{
-    background-color: rgb(14, 13, 13);
-}
 progress[value] {
     -webkit-appearance: none;
     appearance: none;

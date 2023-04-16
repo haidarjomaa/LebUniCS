@@ -20,7 +20,7 @@ progress[value] {
     -webkit-linear-gradient(right, #f2b304, #bf42bf);
     background-size: 40px 20px,  10%;
   }
-progress{
+  progress{
     margin-left: 70%;
     margin-right: 10%;
     margin-bottom: 2%;
@@ -32,7 +32,7 @@ progress{
     margin: auto;
     display: flex;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 6%;
     padding: 0%;
 }
 .pic{

@@ -115,6 +115,8 @@
             rnd.addEventListener("click",random);
             slt.addEventListener("click",bubble);
             function linear(){
+                    if(valeur.value=="")alert("Enter A Valid Number !");
+                    else{
                     let table = document.getElementById("elements");
                     let cells = table.getElementsByTagName("td");
                     let searchValue = parseInt(valeur.value);
@@ -137,8 +139,11 @@
                           }
                         }, i * delay);
                     }
+                  }
             }
             function binary() {
+                if(valeur.value=="")alert("Enter A Valid Number !");
+                else{
                 let table = document.getElementById("elements");
                 let cells = table.getElementsByTagName("td");
                 let searchValue = parseInt(valeur.value);
@@ -192,6 +197,7 @@
                         }
                     }, delay);
                 }
+              }
             }
             function adding(){
                 bin.addEventListener("click",binary);

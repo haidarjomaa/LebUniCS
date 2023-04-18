@@ -115,7 +115,7 @@
             rnd.addEventListener("click",random);
             slt.addEventListener("click",bubble);
             function linear(){
-                    if(valeur.value=="")alert("Enter A Valid Number !");
+                    if(valeur.value==""||valeur.value==NaN)alert("Enter A Valid Number !");
                     else{
                     let table = document.getElementById("elements");
                     let cells = table.getElementsByTagName("td");
@@ -142,7 +142,7 @@
                   }
             }
             function binary() {
-                if(valeur.value=="")alert("Enter A Valid Number !");
+                if(valeur.value==""||valeur.value==NaN)alert("Enter A Valid Number !");
                 else{
                 let table = document.getElementById("elements");
                 let cells = table.getElementsByTagName("td");

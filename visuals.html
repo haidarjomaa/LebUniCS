@@ -115,6 +115,7 @@
             rnd.addEventListener("click",random);
             slt.addEventListener("click",bubble);
             function linear(){
+		    prgrs.innerHTML="";
                     if(valeur.value=="")alert("Enter A Valid Number !");
                     else{
                     let table = document.getElementById("elements");
@@ -144,6 +145,7 @@
             function binary() {
                 if(valeur.value=="")alert("Enter A Valid Number !");
                 else{
+		prgrs.innerHTML="";
                 let table = document.getElementById("elements");
                 let cells = table.getElementsByTagName("td");
                 let searchValue = parseInt(valeur.value);
@@ -206,6 +208,7 @@
                 bin.removeEventListener("click",binary);
             }
             function random(){
+		   prgrs.innerHTML="";
                 let table = document.getElementById("elements");
                 let cells = table.getElementsByTagName("td");
                 for (let i = 0; i < cells.length; i++){cells[i].classList.remove("highlight");cells[i].classList.remove("highlight-test");}
@@ -216,6 +219,7 @@
                 removing();
             }
             function bubble() {
+		    prgrs.innerHTML="";
                 let table = document.getElementById("elements");
                 let cells = table.getElementsByTagName("td");
                 let n = cells.length;

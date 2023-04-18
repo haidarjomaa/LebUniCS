@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visuals</title>
+    <link rel="icon" href="logo.jpg"/>
+    <style>
+        html{
+            background: rgb(29, 27, 27);
+            overflow: hidden;
+        }
+        #elements{
+            margin-left: 25%;
+            margin-top: 5%;
+            width: 50%;
+            height: 50%;
+            color: white;
+            border-color: black;
+            text-align:center;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        div{
+            margin-top: 4%;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: larger;
+        }
+        button{
+            border-radius:25px;
+            margin-left: 2%;
+            width: 130px;
+            height: 40px;
+            background: transparent;
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition:500ms;
+        }
+        button:hover{
+            background-color: white;
+            color: black;
+        }
+        .highlight {
+			background-color: red;
+		}
+        .input {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+            font-weight: 500;
+            font-size: .8vw;
+            color: #fff;
+            background-color: rgb(36, 36, 39);
+            box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+            border-radius: 0.4vw;
+            border: none;
+            outline: none;
+            padding: 0.4vw;
+            max-width: 190px;
+            transition: .4s;
+          }
+          
+          .input:hover {
+            box-shadow: 0 0 0 .15vw rgba(135, 207, 235, 0.186);
+          }
+          
+          .input:focus {
+            box-shadow: 0 0 0 .15vw skyblue;
+          }
+          .highlight-green{
+            background:rgb(77, 0, 128);
+          }
+          .highlight-yellow{
+            background-color: rgb(0, 238, 255);
+          }
+          .highlight-test{
+            background:rgb(46, 0, 212);
+          }
+          td{
+            width: 10%;
+          }
+          #back{
+            border-radius:10px;
+          }
+          #back:hover{
+            background-color: rgb(131, 0, 0);
+          }
+          #bin:hover{
+            background-color: rgb(0, 105, 131);
+          }
+          #rnd:hover{
+            background-color: #a3004c;
+          }
+          #slt:hover{
+            background-color: #a3a000;
+          }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<div id='nav' style='margin-top:2%;><a href='discover.html'><button id='back'>Go Back</button></a></div><table id='elements' border=3 cellpadding=16 cellspacing=4 ><tr>");
+            for(i=1;i<=50;i++){
+                document.write("<td id='t"+i+"'>"+i+"</td>");
+                if(i%10==0)document.write("</tr><tr>");
+            }
+            document.write("</table><div id='choice'><button onclick='linear();'>Linear Search</button>");
+            document.write("<button id='bin'>Binary Search</button><button id='rnd'>Randomise</button><button id='slt'>Bubble Sort</button></div>");
+            document.write("<div><input id='valeur' type=text name=text class=input placeholder='Enter A Number'></div><div id='prgrs'></div>");
+            bin.addEventListener("click",binary);
+            rnd.addEventListener("click",random);
+            slt.addEventListener("click",bubble);
+            function linear(){
+                    let table = document.getElementById("elements");
+                    let cells = table.getElementsByTagName("td");
+                    let searchValue = parseInt(valeur.value);
+                    let delay = 125;
+                    let found=false;
+                    for (let i = 0; i < cells.length; i++){cells[i].classList.remove("highlight");cells[i].classList.remove("highlight-test");}
+                    for (let i = 0; i < cells.length; i++) {
+                        setTimeout(() => {
+                          if (!found) {
+                            if (parseInt(cells[i].innerText) == searchValue) {
+                              cells[i].classList.add("highlight");
+                              prgrs.innerHTML="Value Found At Index "+i;
+                              found = true;
+                            } else {
+                              cells[i].classList.add("highlight");
+                              setTimeout(() => {
+                                cells[i].classList.remove("highlight");
+                              }, delay);
+                            }
+                          }
+                        }, i * delay);
+                    }
+            }
+            function binary() {
+                let table = document.getElementById("elements");
+                let cells = table.getElementsByTagName("td");
+                let searchValue = parseInt(valeur.value);
+                let delay = 750;
+                let start = 0;
+                let end = cells.length - 1;
+                for (let i = 0; i < cells.length; i++){cells[i].classList.remove("highlight");cells[i].classList.remove("highlight-test");}
+                setTimeout(() => {
+                    let middle = Math.floor((start + end) / 2);
+                    if (parseInt(cells[middle].innerText) == searchValue) {
+                        cells[middle].classList.add("highlight");
+                        prgrs.innerHTML="Value Found At Index "+middle;
+                        return;
+                    }
+                    cells[middle].classList.add("highlight");
+                    setTimeout(() => {
+                        cells[middle].classList.remove("highlight");
+                    }, delay);
+    
+                    if (searchValue < parseInt(cells[middle].innerText)) {
+                        end = middle - 1;
+                    } else {
+                        start = middle + 1;
+                    }
+    
+                    if (start <= end) {
+                        binarySearchHelper(start, end);
+                    }
+                }, delay);
+                function binarySearchHelper(start, end) {
+                    setTimeout(() => {
+                        let middle = Math.floor((start + end) / 2);
+                        if (parseInt(cells[middle].innerText) == searchValue) {
+                            cells[middle].classList.add("highlight");
+                            prgrs.innerHTML="Value Found At Index "+middle;
+                            return;
+                        }
+                        cells[middle].classList.add("highlight");
+                        setTimeout(() => {
+                            cells[middle].classList.remove("highlight");
+                        }, delay);
+    
+                        if (searchValue < parseInt(cells[middle].innerText)) {
+                            end = middle - 1;
+                        } else {
+                            start = middle + 1;
+                        }
+    
+                        if (start <= end) {
+                            binarySearchHelper(start, end);
+                        }
+                    }, delay);
+                }
+            }
+            function adding(){
+                bin.addEventListener("click",binary);
+            }
+            function removing(){
+                bin.removeEventListener("click",binary);
+            }
+            function random(){
+                let table = document.getElementById("elements");
+                let cells = table.getElementsByTagName("td");
+                for (let i = 0; i < cells.length; i++){cells[i].classList.remove("highlight");cells[i].classList.remove("highlight-test");}
+                for(i=0;i<cells.length;i++){
+                    random=Math.round(Math.random()*99);
+                    cells[i].innerHTML=random;
+                }
+                removing();
+            }
+            function bubble() {
+                let table = document.getElementById("elements");
+                let cells = table.getElementsByTagName("td");
+                let n = cells.length;
+                let delay = 10;
+                adding();
+
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      setTimeout(() => {
+        if (parseInt(cells[j].innerText) > parseInt(cells[j + 1].innerText)) {
+          swap(cells[j], cells[j + 1]);
+        }
+        cells[j].classList.add("highlight-yellow");
+        cells[j + 1].classList.add("highlight-green");
+
+        setTimeout(() => {
+          cells[j].classList.remove("highlight-yellow");
+          cells[j + 1].classList.remove("highlight-green");
+          if (j == n - i - 2) {
+            cells[n - i - 1].classList.add("highlight-test");
+          if(i>n-3)cells[0].classList.add("highlight-test");
+          }
+        }, delay);
+      }, (i * (n - 1) + j) * delay);
+    }
+}
+  function swap(cell1, cell2) {
+    let temp = cell1.innerText;
+    cell1.innerText = cell2.innerText;
+    cell2.innerText = temp;
+  }
+}
+    </script>
+</body>
+</html>
